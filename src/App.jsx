@@ -73,7 +73,7 @@ export default function JamelleWebsite() {
             <div>
               <div className="text-sm font-semibold text-blue-600 mb-2">THE REALITY</div>
               <p className="text-gray-700">
-                70% of enterprise GenAI projects fail to reach production. Most aren't technical problemsâ€"they're architectural and organizational ones.
+                70% of enterprise GenAI projects fail to reach production. Most aren't technical problems—they're architectural and organizational ones.
               </p>
             </div>
             <div>
@@ -102,7 +102,7 @@ export default function JamelleWebsite() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Service 1 */}
           <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
-            <div className="text-3xl mb-4">ðŸ"‹</div>
+            <div className="text-3xl mb-4">📋</div>
             <h3 className="text-xl font-bold mb-3">AI Strategy & Roadmap</h3>
             <p className="text-gray-600 mb-6">
               Work with your C-suite and product leaders to build a multi-year GenAI strategy tailored to your business. Assess where you are, identify high-impact use cases, and create an implementation-ready roadmap.
@@ -128,7 +128,7 @@ export default function JamelleWebsite() {
 
           {/* Service 2 */}
           <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
-            <div className="text-3xl mb-4">âœ"</div>
+            <div className="text-3xl mb-4">✓</div>
             <h3 className="text-xl font-bold mb-3">Implementation Readiness</h3>
             <p className="text-gray-600 mb-6">
               Before you build, know what you're missing. Audit your data infrastructure, team capabilities, integration points, and compliance requirements. Get a clear playbook to execute.
@@ -154,7 +154,7 @@ export default function JamelleWebsite() {
 
           {/* Service 3 */}
           <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
-            <div className="text-3xl mb-4">ðŸŽ¯</div>
+            <div className="text-3xl mb-4">🎯</div>
             <h3 className="text-xl font-bold mb-3">Fractional AI Advisor</h3>
             <p className="text-gray-600 mb-6">
               Ongoing strategic guidance for scaling companies building AI capabilities. Strategic decisions, vendor evaluation, architecture guidance, and roadmap refinement on a retainer basis.
@@ -236,7 +236,7 @@ export default function JamelleWebsite() {
               Deep look at what separates successful AI deployments from failures. Includes a 12-point checklist before you deploy.
             </p>
             <a href="#contact" className="text-blue-600 font-medium text-sm hover:underline">
-              Get the checklist â†'
+              Get the checklist →
             </a>
           </div>
 
@@ -253,7 +253,7 @@ export default function JamelleWebsite() {
               Why 80% of proofs-of-concept never reach production. What changes between POC and scale.
             </p>
             <a href="#contact" className="text-blue-600 font-medium text-sm hover:underline">
-              Get the assessment â†'
+              Get the assessment →
             </a>
           </div>
 
@@ -270,7 +270,7 @@ export default function JamelleWebsite() {
               Healthcare-specific guide to GenAI adoption, clinical integration, and building clinician trust.
             </p>
             <a href="#contact" className="text-blue-600 font-medium text-sm hover:underline">
-              Get the framework â†'
+              Get the framework →
             </a>
           </div>
 
@@ -287,7 +287,7 @@ export default function JamelleWebsite() {
               Step-by-step guide to building a realistic, executable multi-year GenAI roadmap for your organization.
             </p>
             <a href="#contact" className="text-blue-600 font-medium text-sm hover:underline">
-              Get the template â†'
+              Get the template →
             </a>
           </div>
         </div>
@@ -307,7 +307,7 @@ export default function JamelleWebsite() {
               type="submit"
               className="px-6 py-3 bg-blue-600 text-white rounded font-medium hover:bg-blue-700 transition text-sm"
             >
-              {submitted ? 'âœ" Signed up' : 'Subscribe'}
+              {submitted ? '✓ Signed up' : 'Subscribe'}
             </button>
           </form>
         </div>
@@ -320,7 +320,7 @@ export default function JamelleWebsite() {
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              I've spent the last 12 years architecting and deploying AI solutions at scaleâ€"from conversational AI platforms serving millions of interactions to specialized healthcare systems handling clinical workflows. I've worked with enterprises across healthcare, financial services, and technology, and I've seen the same patterns repeat: companies build great POCs but struggle to get to production.
+              I've spent the last 12 years architecting and deploying AI solutions at scale—from conversational AI platforms serving millions of interactions to specialized healthcare systems handling clinical workflows. I've worked with enterprises across healthcare, financial services, and technology, and I've seen the same patterns repeat: companies build great POCs but struggle to get to production.
             </p>
             
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
@@ -335,23 +335,23 @@ export default function JamelleWebsite() {
               <h3 className="text-lg font-bold mb-4">Key Experience</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex gap-3">
-                  <span className="text-blue-600 font-bold">â€¢</span>
+                  <span className="text-blue-600 font-bold">•</span>
                   <span>Led enterprise AI deployments across healthcare, financial services, and tech</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-blue-600 font-bold">â€¢</span>
+                  <span className="text-blue-600 font-bold">•</span>
                   <span>Built and mentored teams of technical experts; scaled organizations through rapid AI adoption</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-blue-600 font-bold">â€¢</span>
+                  <span className="text-blue-600 font-bold">•</span>
                   <span>Architected integrations with complex enterprise systems (EHR, CRM, data warehouses, legacy systems)</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-blue-600 font-bold">â€¢</span>
+                  <span className="text-blue-600 font-bold">•</span>
                   <span>Consistently reduced implementation timelines by 30-40% while improving quality</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-blue-600 font-bold">â€¢</span>
+                  <span className="text-blue-600 font-bold">•</span>
                   <span>Navigated regulatory and compliance challenges in healthcare and finance</span>
                 </li>
               </ul>
@@ -363,7 +363,7 @@ export default function JamelleWebsite() {
                 <strong>M.S. in System Strategy and Management</strong> - Stevens Institute of Technology
               </p>
               <p className="text-gray-700">
-                <strong>M.S. in Computer Science and Information Systems</strong> - EPITA (Ã‰cole Pour l'Informatique et les Techniques AvancÃ©es), Paris
+                <strong>M.S. in Computer Science and Information Systems</strong> - EPITA (École Pour l'Informatique et les Techniques Avancées), Paris
               </p>
             </div>
           </div>
@@ -458,7 +458,7 @@ export default function JamelleWebsite() {
             <div>
               <h4 className="font-semibold text-sm mb-3">Connect</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="https://linkedin.com/in/jeremy-amsellem" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">LinkedIn</a></li>
+                <li><a href="https://linkedin.com/in/jeremy-amsellem" target="_blank" className="hover:text-gray-900">LinkedIn</a></li>
                 <li><a href="mailto:jeremy.amsellem@gmail.com" className="hover:text-gray-900">Email</a></li>
                 <li><a href="tel:+12012901267" className="hover:text-gray-900">Phone</a></li>
               </ul>
