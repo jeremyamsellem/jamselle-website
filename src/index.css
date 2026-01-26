@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,4 +18,43 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Gradient text utility */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-text-blue bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:rounded-lg before:p-px before:bg-gradient-blue-vibrant;
+  }
+
+  .gradient-border > * {
+    @apply relative;
+  }
+
+  /* Glassmorphism utility */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-gray-900/80 backdrop-blur-md border border-white/10;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition duration-300 ease-out;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-smooth hover:shadow-elevation-hover hover:-translate-y-1;
+  }
+
+  /* Smooth fade in on scroll */
+  .fade-in-on-scroll {
+    @apply opacity-0 animate-fade-in;
+  }
 }
