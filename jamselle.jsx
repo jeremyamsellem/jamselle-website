@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle, BookOpen, Calendar } from 'lucide-react';
+import { ArrowRight, CheckCircle, BookOpen, Calendar, Clipboard, Target } from 'lucide-react';
 
 export default function JamelleWebsite() {
   const [email, setEmail] = useState('');
@@ -102,7 +102,7 @@ export default function JamelleWebsite() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Service 1 */}
           <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
-            <div className="text-3xl mb-4">📋</div>
+            <Clipboard size={32} className="text-blue-600 mb-4" />
             <h3 className="text-xl font-bold mb-3">AI Strategy & Roadmap</h3>
             <p className="text-gray-600 mb-6">
               Work with your C-suite and product leaders to build a multi-year GenAI strategy tailored to your business. Assess where you are, identify high-impact use cases, and create an implementation-ready roadmap.
@@ -128,7 +128,7 @@ export default function JamelleWebsite() {
 
           {/* Service 2 */}
           <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
-            <div className="text-3xl mb-4">✓</div>
+            <CheckCircle size={32} className="text-blue-600 mb-4" />
             <h3 className="text-xl font-bold mb-3">Implementation Readiness</h3>
             <p className="text-gray-600 mb-6">
               Before you build, know what you're missing. Audit your data infrastructure, team capabilities, integration points, and compliance requirements. Get a clear playbook to execute.
@@ -154,7 +154,7 @@ export default function JamelleWebsite() {
 
           {/* Service 3 */}
           <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
-            <div className="text-3xl mb-4">🎯</div>
+            <Target size={32} className="text-blue-600 mb-4" />
             <h3 className="text-xl font-bold mb-3">Fractional AI Advisor</h3>
             <p className="text-gray-600 mb-6">
               Ongoing strategic guidance for scaling companies building AI capabilities. Strategic decisions, vendor evaluation, architecture guidance, and roadmap refinement on a retainer basis.
@@ -307,7 +307,12 @@ export default function JamelleWebsite() {
               type="submit"
               className="px-6 py-3 bg-blue-600 text-white rounded font-medium hover:bg-blue-700 transition text-sm"
             >
-              {submitted ? '✓ Signed up' : 'Subscribe'}
+              {submitted ? (
+                <span className="flex items-center justify-center gap-2">
+                  <CheckCircle size={16} />
+                  Signed up
+                </span>
+              ) : 'Subscribe'}
             </button>
           </form>
         </div>
