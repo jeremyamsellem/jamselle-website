@@ -337,7 +337,7 @@ export default function JamelleWebsite() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="bg-gradient-blue-light py-24">
+      <section id="portfolio" className="bg-gradient-blue-light py-4">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-16 animate-fade-in">
             <h2 className="text-4xl font-bold mb-4 text-gray-900">Portfolio</h2>
@@ -395,15 +395,15 @@ export default function JamelleWebsite() {
       </section>
 
       {/* Customers Carousel */}
-      <section className="bg-white py-4 overflow-hidden">
+      <section className="bg-white py-1 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-8">
+          <div className="mb-4">
             <h2 className="text-xl font-bold text-gray-900 text-center">Trusted by Industry Leaders</h2>
             <p className="text-center text-gray-600 text-sm mt-1">Experience across healthcare, financial services, technology, and enterprise</p>
           </div>
 
           <div className="relative overflow-hidden">
-            <div className="flex gap-4 animate-scroll">
+            <div className="flex gap-8 animate-scroll">
               {[...customers, ...customers].map((customer, index) => (
                 <div
                   key={index}
