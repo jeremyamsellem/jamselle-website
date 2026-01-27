@@ -83,7 +83,7 @@ export default function JamelleWebsite() {
       <nav className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? 'glass shadow-blue-md' : 'bg-white'}`}>
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold tracking-tight text-gradient">
-            Jamselle
+            Jamselle Consulting
           </div>
           <div className="hidden md:flex gap-8 text-sm">
             <a href="#services" className="text-gray-700 hover:text-blue-600 transition-smooth">Services</a>
