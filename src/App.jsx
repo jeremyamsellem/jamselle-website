@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { ArrowRight, CheckCircle, BookOpen } from 'lucide-react';
 import CountUp from './components/CountUp';
 import GlareHover from './components/GlareHover';
+import ProjectModal from './components/ProjectModal';
 
 export default function JamelleWebsite() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [focusedStat, setFocusedStat] = useState(0);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const articles = [
     {
@@ -144,6 +147,16 @@ export default function JamelleWebsite() {
         setSubmitted(false);
       }, 3000);
     }
+  };
+
+  const openProjectModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeProjectModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300);
   };
 
   const getCategoryColor = (category) => {
@@ -348,7 +361,8 @@ export default function JamelleWebsite() {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className="bg-white rounded-xl p-8 shadow-elevation hover-lift border-l-4 border-blue-500 flex flex-col animate-fade-in"
+                onClick={() => openProjectModal(project)}
+                className="bg-white rounded-xl p-8 shadow-elevation hover-lift border-l-4 border-blue-500 flex flex-col animate-fade-in cursor-pointer transition-all duration-300 hover:shadow-elevation-hover"
                 style={{animationDelay: `${index * 0.1}s`}}
               >
                 <div className="flex items-start gap-4 mb-6">
@@ -387,6 +401,11 @@ export default function JamelleWebsite() {
                       </span>
                     ))}
                   </div>
+                </div>
+
+                <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-sm text-blue-600 font-medium">View Full Case Study</span>
+                  <ArrowRight size={18} className="text-blue-600" />
                 </div>
               </div>
             ))}
@@ -774,6 +793,13 @@ export default function JamelleWebsite() {
           </div>
         </div>
       </footer>
+
+      {/* Portfolio Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={closeProjectModal}
+      />
     </div>
   );
 }
