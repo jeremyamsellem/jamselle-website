@@ -550,7 +550,7 @@ export default function HomePage() {
                   <strong>Hoboken, NJ / New York, NY</strong>
                 </p>
                 <p>
-                  <strong>Email:</strong> jeremy.amsellem@gmail.com
+                  <strong>Email:</strong> jamselle@gmail.com
                 </p>
                 <p>
                   <strong>Phone:</strong> (201) 290-1267
@@ -576,7 +576,7 @@ export default function HomePage() {
           <div className="max-w-md mx-auto">
             <form onSubmit={(e) => {
               e.preventDefault();
-              window.location.href = `mailto:jeremy.amsellem@gmail.com?subject=Let's talk about AI strategy`;
+              window.location.href = `mailto:jamselle@gmail.com?subject=Let's talk about AI strategy`;
             }}>
               <input
                 type="email"
@@ -627,7 +627,7 @@ export default function HomePage() {
               <h4 className="font-semibold text-sm mb-3 text-gray-900">Connect</h4>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li><a href="https://linkedin.com/in/jeremy-amsellem" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors">LinkedIn</a></li>
-                <li><a href="mailto:jeremy.amsellem@gmail.com" className="hover:text-gray-900 transition-colors">Email</a></li>
+                <li><a href="mailto:jamselle@gmail.com" className="hover:text-gray-900 transition-colors">Email</a></li>
                 <li><a href="tel:+12012901267" className="hover:text-gray-900 transition-colors">Phone</a></li>
               </ul>
             </div>
