@@ -42,6 +42,84 @@ export default function JamelleWebsite() {
     },
   ];
 
+  const projects = [
+    {
+      id: 1,
+      initials: "HY",
+      companyName: "Hyro.ai - Healthcare GenAI Platform",
+      type: "Healthcare AI",
+      description: "Replaced traditional IVR system with cutting-edge GenAI platform for large healthcare institution across multiple hospitals and clinics.",
+      achievements: [
+        "Launched MVP in record 78 days from contract signing",
+        "Successfully integrated across multiple hospitals and clinics",
+        "Standardized rapid deployment process adopted company-wide"
+      ],
+      technologies: ["Agentic AI", "Healthcare APIs", "Telephony Integration", "LLMs", "IVR Systems", "RAG Architecture"],
+      timeframe: "2024-2025"
+    },
+    {
+      id: 2,
+      initials: "OR",
+      companyName: "OneReach.ai - National Retail Deployment",
+      type: "Enterprise AI",
+      description: "Deployed AI customer service solution across 1,500 retail stores nationwide while maintaining 99.97% uptime and zero negative customer impact.",
+      achievements: [
+        "Completed 1,500-store deployment in 11 months (1 month ahead of schedule)",
+        "18% increase in customer satisfaction scores",
+        "99.97% uptime exceeding 99.9% target",
+        "12% improvement in customer retention rates"
+      ],
+      technologies: ["Conversational AI", "Scale Deployment", "Customer Experience", "Real-time Monitoring", "Enterprise Integration"],
+      timeframe: "2022-2023"
+    },
+    {
+      id: 3,
+      initials: "AM",
+      companyName: "Amelia - Banking AI System",
+      type: "Financial AI",
+      description: "Developed and deployed generative AI system for banking customer service handling 60 distinct use cases with 96.8% accuracy.",
+      achievements: [
+        "78% reduction in calls requiring human transfer",
+        "Average wait time reduced from 8.5 minutes to 12 seconds",
+        "312% ROI within 8 months ($2.3M annual savings)",
+        "96.8% accurate response rate across all interactions"
+      ],
+      technologies: ["Agentic AI", "LLMs", "Voice Integration", "Banking Systems", "RLHF", "Dialogue Management"],
+      timeframe: "2021-2022"
+    },
+    {
+      id: 4,
+      initials: "FS",
+      companyName: "Fintech Startup - Tax Optimization Platform",
+      type: "Conversational AI",
+      description: "Led technical development of conversational AI platform for tax optimization, culminating in $2.3M Series A funding round.",
+      achievements: [
+        "Delivered POC in 8 weeks and MVP in 16 weeks",
+        "85% accuracy in complex multi-turn tax scenarios",
+        "Successfully raised $2.3M Series A funding",
+        "78% conversation completion rate with strong user engagement"
+      ],
+      technologies: ["RAG Architecture", "Vector Databases", "Conversational AI", "OpenAI", "Hybrid Data Architecture"],
+      timeframe: "2023-2024"
+    }
+  ];
+
+  const customers = [
+    { logo: "/img/hyro.png", displayName: "Hyro.ai" },
+    { logo: "/img/onereach.png", displayName: "OneReach.ai" },
+    { logo: "/img/amelia.png", displayName: "Amelia" },
+    { logo: "/img/usaa.png", displayName: "USAA" },
+    { logo: "/img/athenahealth.png", displayName: "Athena Health" },
+    { logo: "/img/discounttire.png", displayName: "Discount Tire" },
+    { logo: "/img/pepsico.png", displayName: "PepsiCo" },
+    { logo: "/img/grady.png", displayName: "Grady Health Systems" },
+    { logo: "/img/piedmont.png", displayName: "Piedmont" },
+    { logo: "/img/SG.png", displayName: "Societe Generale" },
+    { logo: "/img/snb.png", displayName: "SNB" },
+    { logo: "/img/dayton.png", displayName: "Dayton" },
+    { logo: "/img/UR.png", displayName: "Universal Robotics" },
+  ];
+
   React.useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -87,6 +165,7 @@ export default function JamelleWebsite() {
           </div>
           <div className="hidden md:flex gap-8 text-sm">
             <a href="#services" className="text-gray-700 hover:text-blue-600 transition-smooth">Services</a>
+            <a href="#portfolio" className="text-gray-700 hover:text-blue-600 transition-smooth">Portfolio</a>
             <a href="#resources" className="text-gray-700 hover:text-blue-600 transition-smooth">Resources</a>
             <a href="#about" className="text-gray-700 hover:text-blue-600 transition-smooth">About</a>
           </div>
@@ -257,33 +336,118 @@ export default function JamelleWebsite() {
         </div>
       </section>
 
+      {/* Portfolio Section */}
+      <section id="portfolio" className="bg-gradient-blue-light py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-16 animate-fade-in">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Portfolio</h2>
+            <p className="text-xl text-gray-600">Representative projects showcasing AI strategy, implementation, and architectural expertise across industries.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {projects.map((project, index) => (
+              <div
+                key={project.id}
+                className="bg-white rounded-xl p-8 shadow-elevation hover-lift border-l-4 border-blue-500 flex flex-col animate-fade-in"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-blue-vibrant rounded-lg flex items-center justify-center text-white font-bold text-xl flex-shrink-0 shadow-md">
+                    {project.initials}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">{project.companyName}</h3>
+                    <p className="text-sm text-blue-600 font-medium mb-1">{project.type}</p>
+                    <p className="text-xs text-gray-500">{project.timeframe}</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 mb-6 flex-grow">
+                  {project.description}
+                </p>
+
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-3">Key Achievements</h4>
+                  <ul className="space-y-2">
+                    {project.achievements.map((achievement, idx) => (
+                      <li key={idx} className="flex gap-2 text-sm text-gray-600">
+                        <CheckCircle size={16} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                        <span>{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="text-xs text-gray-500 font-medium mb-2">Technologies</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, idx) => (
+                      <span key={idx} className="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full font-medium">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Customers Carousel */}
+      <section className="bg-white py-4 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 text-center">Trusted by Industry Leaders</h2>
+            <p className="text-center text-gray-600 text-sm mt-1">Experience across healthcare, financial services, technology, and enterprise</p>
+          </div>
+
+          <div className="relative overflow-hidden">
+            <div className="flex gap-4 animate-scroll">
+              {[...customers, ...customers].map((customer, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-40 h-20 bg-white rounded-lg flex items-center justify-center shadow-elevation hover-lift transition-all p-3"
+                >
+                  <img
+                    src={customer.logo}
+                    alt={customer.displayName}
+                    className="h-14 max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Credentials */}
       <section className="bg-gradient-blue-soft py-16">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12 text-gray-900">Why I Can Help</h2>
 
           <div className="grid md:grid-cols-4 gap-6 mb-12">
-            <div className={`bg-white rounded-xl p-8 shadow-elevation hover-lift text-center transition-all duration-500 ${focusedStat === 0 ? 'opacity-100 blur-0 scale-100' : 'opacity-60 blur-sm scale-95'}`}>
+            <div className={`bg-white rounded-xl p-8 shadow-elevation hover-lift text-center transition-all duration-500`}>
               <div className="bg-blue-300 inline-block px-6 py-4 rounded-sm shadow-lg -rotate-2 mb-4">
-                <div className="text-5xl font-bold text-blue-900"><CountUp end={10} duration={2000} decimals={0} isActive={focusedStat === 0} />K+</div>
+                <div className="text-5xl font-bold text-blue-900"><CountUp end={10} duration={500} decimals={0} isActive={focusedStat === 0} />K+</div>
               </div>
               <p className="text-gray-700 text-sm leading-relaxed">Daily AI interactions deployed and managed across healthcare systems</p>
             </div>
-            <div className={`bg-white rounded-xl p-8 shadow-elevation hover-lift text-center transition-all duration-500 ${focusedStat === 1 ? 'opacity-100 blur-0 scale-100' : 'opacity-60 blur-sm scale-95'}`}>
+            <div className={`bg-white rounded-xl p-8 shadow-elevation hover-lift text-center transition-all duration-500`}>
               <div className="bg-blue-200 inline-block px-6 py-4 rounded-sm shadow-lg rotate-1 mb-4">
                 <div className="text-5xl font-bold text-blue-900"><CountUp end={87} duration={2000} decimals={0} isActive={focusedStat === 1} />%</div>
               </div>
               <p className="text-gray-700 text-sm leading-relaxed">Accuracy achieved in specialized NLP pipelines for clinical use</p>
             </div>
-            <div className={`bg-white rounded-xl p-8 shadow-elevation hover-lift text-center transition-all duration-500 ${focusedStat === 2 ? 'opacity-100 blur-0 scale-100' : 'opacity-60 blur-sm scale-95'}`}>
+            <div className={`bg-white rounded-xl p-8 shadow-elevation hover-lift text-center transition-all duration-500`}>
               <div className="bg-blue-300 inline-block px-6 py-4 rounded-sm shadow-lg -rotate-1 mb-4">
-                <div className="text-5xl font-bold text-blue-900"><CountUp end={35} duration={2000} decimals={0} isActive={focusedStat === 2} />%</div>
+                <div className="text-5xl font-bold text-blue-900"><CountUp end={35} duration={1000} decimals={0} isActive={focusedStat === 2} />%</div>
               </div>
               <p className="text-gray-700 text-sm leading-relaxed">Average timeline reduction while improving implementation quality</p>
             </div>
-            <div className={`bg-white rounded-xl p-8 shadow-elevation hover-lift text-center transition-all duration-500 ${focusedStat === 3 ? 'opacity-100 blur-0 scale-100' : 'opacity-60 blur-sm scale-95'}`}>
+            <div className={`bg-white rounded-xl p-8 shadow-elevation hover-lift text-center transition-all duration-500`}>
               <div className="bg-blue-200 inline-block px-6 py-4 rounded-sm shadow-lg rotate-2 mb-4">
-                <div className="text-5xl font-bold text-blue-900"><CountUp end={12} duration={2000} decimals={0} isActive={focusedStat === 3} />+</div>
+                <div className="text-5xl font-bold text-blue-900"><CountUp end={12} duration={500} decimals={0} isActive={focusedStat === 3} />+</div>
               </div>
               <p className="text-gray-700 text-sm leading-relaxed">Years architecting enterprise AI across healthcare, finance, and tech</p>
             </div>
@@ -580,11 +744,11 @@ export default function JamelleWebsite() {
               <p className="text-sm text-gray-600">AI Strategy Advisory</p>
             </div>
             <div>
-              <h4 className="font-semibold text-sm mb-3 text-gray-900">Services</h4>
+              <h4 className="font-semibold text-sm mb-3 text-gray-900">Work</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#services" className="hover:text-gray-900 transition-colors">Strategy & Roadmap</a></li>
-                <li><a href="#services" className="hover:text-gray-900 transition-colors">Implementation Readiness</a></li>
-                <li><a href="#services" className="hover:text-gray-900 transition-colors">Fractional Advisor</a></li>
+                <li><a href="#services" className="hover:text-gray-900 transition-colors">Services</a></li>
+                <li><a href="#portfolio" className="hover:text-gray-900 transition-colors">Portfolio</a></li>
+                <li><a href="#about" className="hover:text-gray-900 transition-colors">About</a></li>
               </ul>
             </div>
             <div>
