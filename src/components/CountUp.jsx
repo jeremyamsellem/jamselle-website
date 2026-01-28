@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-export default function CountUp({ end, duration = 2000, decimals = 0, isActive = true }) {
+export default function CountUp({ end, duration = 2000, decimals = 0, suffix = '', isActive = true }) {
   const [displayValue, setDisplayValue] = React.useState(0);
 
   useEffect(() => {
@@ -24,5 +24,5 @@ export default function CountUp({ end, duration = 2000, decimals = 0, isActive =
     requestAnimationFrame(updateValue);
   }, [end, duration, decimals, isActive]);
 
-  return <span>{displayValue}</span>;
+  return <span>{displayValue}{suffix}</span>;
 }

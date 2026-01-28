@@ -22,7 +22,7 @@ export default function JamelleWebsite() {
       <nav className="sticky top-0 z-40 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold tracking-tight text-gray-900">
-            Jamselle
+            Jamselle Consulting
           </div>
           <div className="hidden md:flex gap-8 text-sm">
             <a href="#services" className="hover:text-blue-600 transition">Services</a>
@@ -463,7 +463,7 @@ export default function JamelleWebsite() {
             <div>
               <h4 className="font-semibold text-sm mb-3">Connect</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="https://linkedin.com/in/jeremy-amsellem" target="_blank" className="hover:text-gray-900">LinkedIn</a></li>
+                <li><a href="https://linkedin.com/in/jeremyamsellem" target="_blank" className="hover:text-gray-900">LinkedIn</a></li>
                 <li><a href="mailto:jeremy.amsellem@gmail.com" className="hover:text-gray-900">Email</a></li>
                 <li><a href="tel:+12012901267" className="hover:text-gray-900">Phone</a></li>
               </ul>

@@ -1,6 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-primary: #1a1a1a;
+  --color-primary-light: #2d2d2d;
+  --color-accent: #3b82f6;
+  --color-accent-warm: #f97316;
+  --color-accent-muted: #64748b;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #64748b;
+
+  --dark-primary: #ffffff;
+  --dark-primary-light: #f1f5f9;
+  --dark-surface: #0f1419;
+  --dark-surface-secondary: #1a202c;
+  --dark-border: #2d3748;
+  --dark-text-primary: #ffffff;
+  --dark-text-secondary: #cbd5e0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -8,11 +31,17 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: var(--dark-surface);
+  color: var(--dark-text-primary);
 }
 
 code {
@@ -20,14 +49,25 @@ code {
     monospace;
 }
 
+/* Display font for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
 /* Gradient text utility */
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-text-blue bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent;
   }
 
   .gradient-border {
-    @apply relative before:absolute before:inset-0 before:rounded-lg before:p-px before:bg-gradient-blue-vibrant;
+    @apply relative before:absolute before:inset-0 before:rounded-lg before:p-px before:bg-gradient-to-r before:from-blue-600 before:to-blue-800;
   }
 
   .gradient-border > * {
@@ -36,11 +76,11 @@ code {
 
   /* Glassmorphism utility */
   .glass {
-    @apply bg-white/80 backdrop-blur-md border border-white/20;
+    @apply bg-white/95 backdrop-blur-lg border border-white/40;
   }
 
   .glass-dark {
-    @apply bg-gray-900/80 backdrop-blur-md border border-white/10;
+    @apply bg-slate-900/95 backdrop-blur-lg border border-white/10;
   }
 
   /* Smooth transitions */
@@ -48,14 +88,53 @@ code {
     @apply transition duration-300 ease-out;
   }
 
+  .transition-premium {
+    @apply transition duration-500;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Refined shadow system */
+  .shadow-subtle {
+    @apply shadow-sm;
+  }
+
+  .shadow-refined {
+    @apply shadow-md;
+  }
+
+  .shadow-premium {
+    @apply shadow-lg;
+  }
+
+  .shadow-deep {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+
   /* Hover lift effect */
   .hover-lift {
-    @apply transition-smooth hover:shadow-elevation-hover hover:-translate-y-1;
+    @apply transition-premium hover:shadow-deep hover:-translate-y-2;
+  }
+
+  .hover-subtle {
+    @apply transition-smooth hover:shadow-refined hover:-translate-y-1;
   }
 
   /* Smooth fade in on scroll */
   .fade-in-on-scroll {
     @apply opacity-0 animate-fade-in;
+  }
+
+  /* Dark mode utilities */
+  .dark-mode .light-only {
+    @apply hidden;
+  }
+
+  .dark-only {
+    @apply hidden;
+  }
+
+  .dark-mode .dark-only {
+    @apply block;
   }
 }
 
@@ -75,4 +154,81 @@ code {
 
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Scroll reveal animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Stagger animation helper */
+.stagger-item {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Intersection observer class for scroll animations */
+.scroll-animate {
+  opacity: 0;
+}
+
+.scroll-animate.in-view {
+  animation: slideInUp 0.6s ease-out forwards;
 }

@@ -4,7 +4,7 @@ export const article = {
   category: "Healthcare",
   description: "Healthcare-specific guide to GenAI adoption, clinical integration, and building clinician trust.",
   excerpt: "Navigating healthcare GenAI requires understanding regulatory constraints, clinical workflows, and the importance of clinician trust—it's not just a technical problem.",
-  readTime: "15 min read",
+  readTime: "7 min read",
   date: "2025-01-10",
   slug: "healthcare-genai-guide",
   author: "Jeremy Amsellem",

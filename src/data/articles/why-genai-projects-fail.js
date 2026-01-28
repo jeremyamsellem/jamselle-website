@@ -4,7 +4,7 @@ export const article = {
   category: "AI Strategy",
   description: "Deep look at what separates successful AI deployments from failures.",
   excerpt: "Most enterprise GenAI failures aren't technical problems—they're architectural decisions made too late, organizational misalignment, and unrealistic budgets.",
-  readTime: "12 min read",
+  readTime: "5 min read",
   date: "2025-01-20",
   slug: "why-genai-projects-fail",
   author: "Jeremy Amsellem",
