@@ -373,5 +373,103 @@ export const projectDetails = {
       "Creating compelling investor demos requires both technical sophistication and intuitive UX",
       "Rapid prototyping under tight timelines demands clear phase definitions and milestone tracking"
     ]
+  },
+
+  5: {
+    // Transfix - AI-Assisted Development
+    situation:
+      "Transfix was scaling rapidly with 40+ developers across teams. Some were using AI coding agents inconsistently, others weren't using them at all. No standards for code quality, no consistency in approach, security concerns about public tools. The real challenge: How do you get every developer using AI agents effectively while maintaining code quality and ensuring consistency across the entire organization?",
+
+    challenge: {
+      title: "The Challenge",
+      items: [
+        "Inconsistent adoption of AI coding agents across teams (40% adoption, 35% skeptical, 25% concerned)",
+        "Varying code quality and no organizational standards for AI-assisted development",
+        "Security concerns about developers using public tools for sensitive code",
+        "Need to achieve 95%+ adoption while maintaining or improving code quality",
+        "Establish sustainable model that works across multiple tech stacks (Python, Node.js, Go)"
+      ]
+    },
+
+    approach: {
+      phases: [
+        {
+          title: "Phase 1: Assessment & Strategy (Weeks 1-2)",
+          description:
+            "Conducted developer interviews and audits to understand current state, barriers to adoption, and opportunities. Evaluated AI agent options and created phased rollout strategy.",
+          outcomes: [
+            "Surveyed 20+ developers across all teams",
+            "Analyzed codebase to identify quality issues and inconsistencies",
+            "Found: 30% of code review time spent on style fixes (not logic)",
+            "Evaluated enterprise AI solutions with privacy controls"
+          ]
+        },
+        {
+          title: "Phase 2: Standards & Guardrails (Weeks 3-4)",
+          description:
+            "Built infrastructure before any developer got access. Created standards, selected enterprise tool, and configured automated quality enforcement.",
+          outcomes: [
+            "Created AI Agent Usage Guidelines (when to use, what to review)",
+            "Documented code standards and patterns for each tech stack",
+            "Selected enterprise AI solution with privacy controls",
+            "Configured automated quality enforcement at commit time"
+          ]
+        },
+        {
+          title: "Phase 3: Training & Adoption (Weeks 5-7)",
+          description:
+            "Designed role-specific training for different developer archetypes (skeptics, power users, non-users). Made adoption the default, not opt-in.",
+          outcomes: [
+            "Targeted training for skeptics showing data and live demos",
+            "Advanced techniques for power users",
+            "Hands-on workshops and pair programming for non-users",
+            "Weekly AI tips and monthly showcases in team meetings"
+          ]
+        },
+        {
+          title: "Phase 4: Quality & Continuous Improvement (Weeks 8-12)",
+          description:
+            "Enhanced code review process, built measurement framework, and created feedback loops for ongoing optimization.",
+          outcomes: [
+            "Modified code review process to work with AI-assisted development",
+            "Built automated quality checks (linting, formatting, consistency)",
+            "Created metrics dashboard: adoption, code consistency, velocity",
+            "Monthly feedback sessions and continuous iteration"
+          ]
+        }
+      ]
+    },
+
+    results: {
+      metrics: [
+        { label: "Adoption Rate", value: "95%", highlight: true },
+        { label: "Code Consistency", value: "96%" },
+        { label: "Velocity Improvement", value: "+25-30%" },
+        { label: "Developer Satisfaction", value: "4.3/5" },
+        { label: "Review Cycle Time", value: "2-3 days → 1-2 days" }
+      ],
+      business: [
+        "Achieved 95% adoption (up from 40%), far exceeding initial targets",
+        "30% of code review time previously spent on style fixes now focused on logic and quality",
+        "Development teams reporting increased confidence in code quality",
+        "New developers onboarded faster with clear standards and tooling",
+        "Established model adopted company-wide as blueprint for scaling AI tools"
+      ],
+      technical: [
+        "Achieved 96% code style consistency across all teams and tech stacks",
+        "Reduced code review cycles from 2-3 days to 1-2 days",
+        "Delivered 25-30% velocity improvement while maintaining quality standards",
+        "Automated quality checks preventing regressions",
+        "Sustainable adoption model supporting continuous growth"
+      ]
+    },
+
+    keyTakeaways: [
+      "AI adoption is 20% technology, 80% people—success depends on training and change management",
+      "Build guardrails BEFORE deployment—standards and enforcement must exist first",
+      "Address adoption barriers by role—skeptics, power users, and non-users need different approaches",
+      "Measurement drives improvement—without metrics, you can't track what's working or identify gaps",
+      "Make adoption default, not opt-in—organizational change requires structural decisions"
+    ]
   }
 };

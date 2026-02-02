@@ -25,6 +25,21 @@ export default function HomePage() {
 
   const projects = [
     {
+      id: 5,
+      initials: "TX",
+      companyName: "Transfix - AI-Assisted Development",
+      type: "Organizational Transformation",
+      description: "Led enterprise-scale AI adoption across engineering organization, transforming developer practices and establishing standards for consistent, high-quality AI-assisted code generation.",
+      achievements: [
+        "Scaled adoption from 40% to 95% across 40+ developers",
+        "Achieved 96% code style consistency across all teams",
+        "Delivered 25-30% velocity improvement while maintaining quality",
+        "Established sustainable model for ongoing AI tool optimization"
+      ],
+      technologies: ["Change Management", "Developer Tools", "AI Agents", "Enterprise Architecture", "Quality Assurance", "Organizational Design"],
+      timeframe: "2024"
+    },
+    {
       id: 1,
       initials: "HY",
       companyName: "Hyro.ai - Healthcare GenAI Platform",

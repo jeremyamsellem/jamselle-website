@@ -27,6 +27,11 @@ export default function ProjectImpactCard({ project, index, onOpenModal }) {
       { label: 'Funding Raised', value: '$2.3M Series A', icon: TrendingUp },
       { label: 'POC Timeline', value: '8 weeks', icon: Clock }
     ];
+  } else if (project.companyName.includes('Transfix')) {
+    metrics = [
+      { label: 'Adoption Rate', value: '95%', icon: TrendingUp },
+      { label: 'Code Consistency', value: '96%', icon: Users }
+    ];
   }
 
   const isWide = index === 0 || index === 3; // First and last cards span full width
