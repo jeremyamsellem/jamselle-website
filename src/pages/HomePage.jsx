@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, CheckCircle, Phone, Mail, MapPin, Briefcase, CheckSquare, Headphones } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import ProjectImpactCard from '../components/ProjectImpactCard';
 import KnowledgeHub from '../components/KnowledgeHub';
@@ -122,6 +122,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection isDarkMode={isDarkMode} />
 
+      {/* Trust Metrics Section */}
+      <TrustMetricsSection isDarkMode={isDarkMode} />
+
       {/* Problem/Context Section */}
       <ProblemSection isDarkMode={isDarkMode} />
 
@@ -181,6 +184,42 @@ export default function HomePage() {
   );
 }
 
+function TrustMetricsSection({ isDarkMode }) {
+  const metrics = [
+    { label: "Years of Experience", value: "12+" },
+    { label: "AI Projects Deployed", value: "50+" },
+    { label: "Daily Interactions Served", value: "10,000+" },
+    { label: "Enterprise Clients", value: "Healthcare, Finance, Tech" }
+  ];
+
+  return (
+    <section className={`py-12 transition-colors duration-300 border-b ${
+      isDarkMode
+        ? 'bg-slate-900 border-slate-800'
+        : 'bg-gradient-to-r from-amber-50 to-blue-50 border-gray-200'
+    }`}>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {metrics.map((metric, idx) => (
+            <div key={idx} className="text-center">
+              <div className={`text-3xl md:text-4xl font-bold font-display mb-2 ${
+                isDarkMode ? 'text-amber-400' : 'text-amber-600'
+              }`}>
+                {metric.value}
+              </div>
+              <p className={`text-sm md:text-base ${
+                isDarkMode ? 'text-gray-400' : 'text-gray-700'
+              }`}>
+                {metric.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HeroSection({ isDarkMode }) {
   const ref = useIntersectionObserver({ threshold: 0.2 });
 
@@ -226,7 +265,7 @@ function HeroSection({ isDarkMode }) {
           <div className="flex gap-4 flex-wrap animate-scale-in" style={{animationDelay: '0.2s'}}>
             <button
               onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg font-medium hover:shadow-deep transition-premium hover:scale-105 flex items-center gap-2"
+              className="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-lg font-medium hover:shadow-deep transition-premium hover:scale-105 flex items-center gap-2"
             >
               Start a Conversation <ArrowRight size={18} />
             </button>
@@ -234,8 +273,8 @@ function HeroSection({ isDarkMode }) {
               onClick={() => document.getElementById('resources').scrollIntoView({ behavior: 'smooth' })}
               className={`px-6 py-3 rounded-lg font-medium transition-premium border-2 ${
                 isDarkMode
-                  ? 'border-blue-500 text-blue-400 hover:bg-blue-500/10'
-                  : 'border-blue-600 text-blue-600 hover:bg-blue-50'
+                  ? 'border-amber-500 text-amber-400 hover:bg-amber-500/10'
+                  : 'border-amber-600 text-amber-600 hover:bg-amber-50'
               }`}
             >
               View Resources
@@ -279,7 +318,7 @@ function ProblemSection({ isDarkMode }) {
               className={`rounded-xl p-8 backdrop-blur-sm stagger-item transition-premium ${
                 isDarkMode
                   ? 'bg-slate-800/50 border border-slate-700 hover:shadow-deep'
-                  : 'bg-white/80 border border-white/40 hover:shadow-refined'
+                  : 'bg-white border border-gray-200 hover:shadow-refined'
               }`}
               style={{animationDelay: `${index * 0.1}s`}}
             >
@@ -306,19 +345,19 @@ function ServicesSection({ isDarkMode }) {
 
   const services = [
     {
-      icon: "📋",
+      icon: Briefcase,
       title: "AI Strategy & Roadmap",
       description: "Work with your C-suite and product leaders to build a multi-year GenAI strategy tailored to your business. Assess where you are, identify high-impact use cases, and create an implementation-ready roadmap.",
       features: ["Multi-year AI roadmap", "Use case prioritization", "Resource & budget planning"],
     },
     {
-      icon: "✓",
+      icon: CheckSquare,
       title: "Implementation Readiness",
       description: "Before you build, know what you're missing. Audit your data infrastructure, team capabilities, integration points, and compliance requirements. Get a clear playbook to execute.",
       features: ["Systems & data audit", "Readiness assessment", "Implementation playbook"],
     },
     {
-      icon: "🎯",
+      icon: Headphones,
       title: "Fractional AI Advisor",
       description: "Ongoing strategic guidance for scaling companies building AI capabilities. Strategic decisions, vendor evaluation, architecture guidance, and roadmap refinement on a retainer basis.",
       features: ["10-20 hours/month", "Strategic guidance", "Available as needed"],
@@ -352,7 +391,7 @@ function ServicesSection({ isDarkMode }) {
               className={`group relative rounded-xl p-8 transition-premium stagger-item ${
                 isDarkMode
                   ? 'bg-slate-800 border border-slate-700 hover:shadow-deep'
-                  : 'bg-white border border-gray-200 shadow-refined hover:shadow-deep'
+                  : 'bg-white border border-gray-200 shadow-sm hover:shadow-md'
               }`}
               style={{animationDelay: `${index * 0.1}s`}}
             >
@@ -363,7 +402,9 @@ function ServicesSection({ isDarkMode }) {
               }`}></div>
 
               <div className="relative z-10">
-                <div className="text-4xl mb-4">{service.icon}</div>
+                <div className="mb-6">
+                  <service.icon size={32} className={`${isDarkMode ? 'text-blue-400' : 'text-amber-600'}`} />
+                </div>
                 <h3 className={`text-xl font-bold font-display mb-3 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                   {service.title}
                 </h3>
@@ -491,7 +532,7 @@ function AboutSection({ isDarkMode }) {
 
               <button
                 onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg font-medium hover:shadow-deep transition-premium mb-6"
+                className="w-full px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-lg font-medium hover:shadow-deep transition-premium mb-6"
               >
                 Schedule a Call
               </button>
